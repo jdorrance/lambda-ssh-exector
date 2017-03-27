@@ -1,6 +1,7 @@
 dependencies:
   pre:
     - pip install paramiko -t ./
+    - pip install requests -t ./
 general:
   artifacts:
     - "build.zip"

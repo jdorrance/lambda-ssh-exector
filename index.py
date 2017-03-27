@@ -1,6 +1,9 @@
 import paramiko
+from requests import get
 
 def handler(event, context):
+    ip = get('https://api.ipify.org').text
+    print('My public IP address is: {}'.format(ip))
     client = None
     print("beginning ssh command")
     output = ""
