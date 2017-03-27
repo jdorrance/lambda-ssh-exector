@@ -6,6 +6,7 @@ general:
     - "build.zip"
 test:
   override:
+    - chmod -R 777 ./
     - node zip.js
 deployment:
   production:
