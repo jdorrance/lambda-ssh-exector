@@ -1,8 +1,9 @@
 machine:
-  post:
-    - pyenv global 2.7.9
+  python:
+    version: pypy-2.2.1
 dependencies:
   pre:
+    - npm install
     - pip install paramiko
     - pip install requests
 general:
