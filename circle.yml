@@ -1,7 +1,10 @@
+machine:
+  post:
+    - pyenv global 2.7.9
 dependencies:
   pre:
-    - pip install paramiko -t ./
-    - pip install requests -t ./
+    - pip install paramiko
+    - pip install requests
 general:
   artifacts:
     - "build.zip"
