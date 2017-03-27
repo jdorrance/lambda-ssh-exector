@@ -1,10 +1,9 @@
 machine:
   python:
-    version: pypy-2.2.1
+    version: pypy-2.7.0
 dependencies:
   pre:
     - npm install
-    - pip install pyOpenSSL ndg-httpsclient pyasn1
     - pip install paramiko
 general:
   artifacts:
