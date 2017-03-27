@@ -14,7 +14,7 @@ general:
     - "build.zip"
 test:
   override:
-    - make-lambda-package . --requirements-file requirements.txt --repo-source-files *.py
+    - make-lambda-package . --requirements-file _requirements.txt --repo-source-files *.py
 deployment:
   production:
     branch: master
