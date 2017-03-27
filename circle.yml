@@ -1,0 +1,16 @@
+dependencies:
+  pre:
+    - npm install
+    - pip install paramiko -t ./
+general:
+  artifacts:
+    - "build.zip"
+test:
+  override:
+    - node zip.js
+deployment:
+  production:
+    branch: master
+    commands:
+      - aws configure set default.region us-east-1
+      - aws lambda update-function-code --function-name lambda-ssh-exector --zip-file fileb://build.zip
