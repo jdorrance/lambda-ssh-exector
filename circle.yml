@@ -1,6 +1,5 @@
 dependencies:
   pre:
-    - npm install
     - pip install paramiko -t ./
 general:
   artifacts:

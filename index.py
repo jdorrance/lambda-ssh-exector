@@ -26,7 +26,3 @@ def my_handler(event, context):
             print("closing ssh client")
             client.close()
     return output
-
-
-
-my_handler(event, "")
