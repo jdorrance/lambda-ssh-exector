@@ -1,6 +1,6 @@
 machine:
   python:
-    version: pypy-2.7.0
+    version: pypy-2.2.1
   services:
     - docker
 dependencies:
