@@ -7,14 +7,12 @@ dependencies:
   cache_directories:
     - "node_modules"
     - "~/docker-images"
-  pre:
-    - pip install make-lambda-package
 general:
   artifacts:
     - "build.zip"
 test:
   override:
-    - make-lambda-package . --requirements-file _requirements.txt --repo-source-files *.py
+    - make-lambda-package . --requirements-file buildrequirements.txt.txt --repo-source-files *.py
 deployment:
   production:
     branch: master
