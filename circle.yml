@@ -1,20 +1,24 @@
 machine:
   python:
     version: pypy-2.7.0
+  services:
+    - docker
 dependencies:
+  cache_directories:
+    - "node_modules"
+    - "~/docker-images"
   pre:
-    - npm install
-    - pip install paramiko
+    - pip install make-lambda-package
 general:
   artifacts:
     - "build.zip"
 test:
   override:
-    - chmod -R 777 ./
-    - node zip.js
+    - make-lambda-package . --requirements-file requirements.txt --repo-source-files *.py
 deployment:
   production:
     branch: master
     commands:
+      - cp dist/lambda-package.zip build.zip
       - aws configure set default.region us-east-1
       - aws lambda update-function-code --function-name lambda-ssh-exector --zip-file fileb://build.zip
