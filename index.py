@@ -1,6 +1,6 @@
 import paramiko
 
-def my_handler(event, context):
+def handler(event, context):
     client = None
     print("beginning ssh command")
     output = ""
