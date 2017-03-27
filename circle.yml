@@ -5,7 +5,6 @@ dependencies:
   pre:
     - npm install
     - pip install paramiko
-    - pip install requests
 general:
   artifacts:
     - "build.zip"
